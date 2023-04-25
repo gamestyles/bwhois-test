@@ -135,7 +135,7 @@ const App = () => {
                 <a href={item.name.endsWith('.eth') ? `https://app.ens.domains/name/${item.name}/details` : `https://unstoppabledomains.com/search?searchTerm=${item.name}`}
                  target="_blank" rel="noopener noreferrer">Visit</a>
                 {!item.available && <a href={`https://opensea.io/assets?search[query]==${item.name}`} target="_blank" rel="noopener noreferrer">OpenSea</a>}
-                {item.available && item.name.includes(".eth") && <a href={`https://unstoppabledomains.com/app/website/${item.name}`} target="_blank" rel="noopener noreferrer">Buy</a>}
+                {item.available && item.name.includes(".eth") && <a onClick={() => window.open(`/BuyENS?domain=${item.name}`, '_blank')}>Buy</a>}
               </div>
             </List.Item>
           )}
